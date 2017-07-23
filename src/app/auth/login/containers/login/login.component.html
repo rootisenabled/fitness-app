@@ -2,6 +2,9 @@
   <auth-form (submitted)="loginUser($event)">
     <h5>Login!</h5>
     <a routerLink="/auth/register">Not registered ?</a>
+    <div class="error" *ngIf="error">
+      {{ error }}
+    </div>
     <span>Login</span>
   </auth-form>
 </div>

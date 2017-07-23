@@ -20,6 +20,8 @@
     </div>
   </div>
 
+  <ng-content select=".auth-error"></ng-content>
+
   <div class="row auth-form__action">
     <div class="col s12">
       <button type="submit" [disabled]="form.invalid" class="btn waves-effect waves-light red darken-1">
