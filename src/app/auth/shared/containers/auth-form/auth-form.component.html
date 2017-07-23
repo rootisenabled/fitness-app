@@ -1,0 +1,37 @@
+<form [formGroup]="form" class="col s12 m6" (ngSubmit)="onSubmit()">
+
+  <ng-content select="h5"></ng-content>
+
+  <div class="row">
+    <div class="input-field col s12">
+      <input type="email" id="email" placeholder="Email address" class="validate" formControlName="email">
+      <label for="email">Email</label>
+      <div class="error" *ngIf="emailFormat">
+        Invalid email format
+      </div>
+    </div>
+
+    <div class="input-field col s12">
+      <input id="password" type="password" placeholder="Password" class="validate" formControlName="password">
+      <label for="password">Password</label>
+      <div class="error" *ngIf="passwordInvalid">
+        Password required
+      </div>
+    </div>
+  </div>
+
+  <div class="row auth-form__action">
+    <div class="col s12">
+      <button type="submit" [disabled]="form.invalid" class="btn waves-effect waves-light red darken-1">
+      <ng-content select="span"></ng-content>
+      <i class="material-icons right">send</i>
+    </button>
+    </div>
+  </div>
+
+  <div class="row auth-form__toggle">
+    <div class="col s12">
+      <ng-content select="a"></ng-content>
+    </div>
+  </div>
+</form>
