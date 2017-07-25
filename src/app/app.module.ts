@@ -1,3 +1,4 @@
+import { Store } from './reactive-store/store';
 import { RouterModule, Routes } from '@angular/router';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -20,7 +21,9 @@ import { AppComponent } from './app.component';
     RouterModule,
     AuthModule,
   ],
-  providers: [],
+  providers: [
+    Store
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
